@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 INSTALL_ROOT=/mnt
 
@@ -13,7 +13,7 @@ parted -s -- /dev/sda unit MB mkpart primary xfs  20001 -0
 
 ## Create filesystems
 mkfs.ext2 /dev/sda1 > /dev/null
-mkfs.ext4 /dev/sda > /dev/null2
+mkfs.ext4 /dev/sda > /dev/null
 mkfs.xfs -f /dev/sda3 > /dev/null
 mkfs.xfs -f /dev/sda4 > /dev/null
 
@@ -88,16 +88,17 @@ ff02::3 ip6-allhosts
 EOF
 
 ## Cleanup
-rm $INSTALL_ROOT/var/cache/apt/archives/*
-rm $INSTALL_ROOT/var/cache/apt/*.bin
-rm $INSTALL_ROOT/var/lib/apt/lists/*
-rm $INSTALL_ROOT/var/log/dpkg.log*
-rm $INSTALL_ROOT/var/log/apt/*
+#rm $INSTALL_ROOT/var/cache/apt/archives/*
+#rm $INSTALL_ROOT/var/cache/apt/*.bin
+#rm $INSTALL_ROOT/var/lib/apt/lists/*
+#rm $INSTALL_ROOT/var/log/dpkg.log*
+#rm $INSTALL_ROOT/var/log/apt/*
 
 ## Open a shell for troubleshooting
 mount -o bind /dev $INSTALL_ROOT/dev
 mount -o bind /proc $INSTALL_ROOT/proc
 mount -o bind /sys $INSTALL_ROOT/sys
+mkdir $INSTALL_ROOT/var/dev
 mount -t tmpfs tmpfs $INSTALL_ROOT/var/dev/shm
 mount -t devpts devpts $INSTALL_ROOT/dev/pts
 
