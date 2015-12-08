@@ -56,7 +56,6 @@ EOF
 #sed 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen
 #locale-gen
 
-
 ## Configure networking
 
 cat $INSTALL_ROOT/etc/network/interfacess <<EOF
