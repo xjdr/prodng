@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -e
+set -ef -o pipefail
 
 # This script assumes that debootstrap and parted are installed on the
 # host system. As we are manipulating disks this script needs to be run
@@ -43,7 +43,6 @@ mount ${INSTALL_DISK}3 ${INSTALL_ROOT}/var
 debootstrap \
 --arch=amd64 \
 --variant=minbase \
---exclude=systemd \
 --include=netbase,ifupdown,net-tools,isc-dhcp-client,linux-base,sysvinit-core,sysvinit-utils,vim-tiny,linux-image-amd64 \
 jessie \
 $INSTALL_ROOT
@@ -64,12 +63,8 @@ ${INSTALL_DISK}4        /srv          xfs    rw,nodev                  0    2
 
 EOF
 
-#apt-get -y install locales
-#sed 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen
-#locale-gen
-
 ## Configure networking
-cat ${INSTALL_ROOT}/etc/network/interfaces <<EOF
+cat > ${INSTALL_ROOT}/etc/network/interfaces <<EOF
 ######################################################################
 # /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
 # See the interfaces(5) manpage for information on what options are
@@ -86,7 +81,7 @@ EOF
 
 echo ProdNG-Base > ${INSTALL_ROOT}/etc/hostname
 
-cat ${INSTALL_ROOT}/etc/hosts <<EOF
+cat > ${INSTALL_ROOT}/etc/hosts <<EOF
 127.0.0.1 localhost ProdNG-Base
 
 # The following lines are desirable for IPv6 capable hosts
@@ -99,11 +94,11 @@ ff02::3 ip6-allhosts
 EOF
 
 ## Cleanup
-#rm $INSTALL_ROOT/var/cache/apt/archives/*
-#rm $INSTALL_ROOT/var/cache/apt/*.bin
-#rm $INSTALL_ROOT/var/lib/apt/lists/*
-#rm $INSTALL_ROOT/var/log/dpkg.log*
-#rm $INSTALL_ROOT/var/log/apt/*
+rm $INSTALL_ROOT/var/cache/apt/archives/*
+rm $INSTALL_ROOT/var/cache/apt/*.bin
+rm $INSTALL_ROOT/var/lib/apt/lists/*
+rm $INSTALL_ROOT/var/log/dpkg.log*
+rm $INSTALL_ROOT/var/log/apt/*
 
 ## Open a shell for troubleshooting
 mount -o bind /dev $INSTALL_ROOT/dev
@@ -112,6 +107,11 @@ mount -o bind /sys ${INSTALL_ROOT}/sys
 mkdir ${INSTALL_ROOT}/var/dev
 #mount -t tmpfs tmpfs ${INSTALL_ROOT}/var/dev/shm
 #mount -t devpts devpts ${INSTALL_ROOT}/dev/pts
+
+echo "Please insall a bootloader and set a root passwd"
+
+LANG=C chroot $INSTALL_ROOT DEBIAN_FRONTEND=noninteractive apt-get purge systemd
+LANG=C chroot $INSTALL_ROOT DEBIAN_FRONTEND=noninteractive apt-get install -y sysvinit sysvinit-utils
 
 LANG=c chroot $INSTALL_ROOT /bin/bash
 export TERM=xterm-color
