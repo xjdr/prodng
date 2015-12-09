@@ -2,27 +2,41 @@
 
 #set -e
 
+# This script assumes that debootstrap and parted are installed on the
+# host system. As we are manipulating disks this script needs to be run
+# as root.
+
 INSTALL_ROOT=/mnt
+INSTALL_DISK=/dev/sda
+
+## Ensure you are running as root
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
+## Ensure disk is empty
+dd if=/dev/zero of=$INSTALL_DISK bs=512 count=4
 
 ## Create partitions
-parted -s -- /dev/sda mklabel GPT
-parted -s -- /dev/sda unit MB mkpart primary ext2 1 256
-parted -s -- /dev/sda unit MB mkpart primary ext4 257 1257
-parted -s -- /dev/sda unit MB mkpart primary ext4 1258 20000
-parted -s -- /dev/sda unit MB mkpart primary xfs  20001 -0
+parted -s -- $INSTALL_DISK mklabel GPT
+parted -s -- $INSTALL_DISK unit MB mkpart primary ext2 1 256
+parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 257 1257
+parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 1258 20000
+parted -s -- $INSTALL_DISK unit MB mkpart primary xfs  20001 -0
 
 ## Create filesystems
-mkfs.ext2 /dev/sda1 > /dev/null
-mkfs.ext4 /dev/sda > /dev/null
-mkfs.xfs -f /dev/sda3 > /dev/null
-mkfs.xfs -f /dev/sda4 > /dev/null
+mkfs.ext2 $INSTALL_DISK1 > /dev/null
+mkfs.ext4 $INSTALL_DISK > /dev/null
+mkfs.xfs -f $INSTALL_DISK3 > /dev/null
+mkfs.xfs -f $INSTALL_DISK4 > /dev/null
 
 ## Mount the target drive
-mount /dev/sda2 $INSTALL_ROOT
-mkdir $INSTALL_ROOT/boot
-mount /dev/sda1 $INSTALL_ROOT/boot
-mkdir $INSTALL_ROOT/var
-mount /dev/sda3 $INSTALL_ROOT/var
+mount ${INSTALL_DISK}2 ${INSTALL_ROOT}
+mkdir ${INSTALL_ROOT}/boot
+mount ${INSTALL_DISK}1 ${INSTALL_ROOT}/boot
+mkdir ${INSTALL_ROOT}/var
+mount ${INSTALL_DISK}3 ${INSTALL_ROOT}/var
 
 ## Install minimal debian 
 debootstrap \
@@ -34,18 +48,18 @@ jessie \
 $INSTALL_ROOT
 
 ##create /etc/fstab
-cat > $INSTALL_ROOT/etc/fstab <<EOF
+cat > ${INSTALL_ROOT}/etc/fstab <<EOF
 
 # /etc/fstab: static file system information.
 #
 # file system    mount point   type    options                  dump pass
-/dev/sda2        /             ext4    defaults                 0    1
-/dev/sda1        /boot         ext2    ro,nosuid,nodev          0    2
+${INSTALL_DISK}2        /             ext4    defaults                 0    1
+${INSTALL_DISK}1        /boot         ext2    ro,nosuid,nodev          0    2
 
-proc             /proc         proc    defaults                 0    0
+proc                    /proc         proc    defaults                 0    0
 
-/dev/sda3        /var          xfs    rw,nosuid,nodev           0    2
-/dev/sda4        /srv          xfs    rw,nodev                  0    2
+${INSTALL_DISK}3        /var          xfs    rw,nosuid,nodev           0    2
+${INSTALL_DISK}4        /srv          xfs    rw,nodev                  0    2
 
 EOF
 
@@ -55,7 +69,7 @@ EOF
 
 ## Configure networking
 
-cat $INSTALL_ROOT/etc/network/interfacess <<EOF
+cat ${INSTALL_ROOT}/etc/network/interfacess <<EOF
 ######################################################################
 # /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
 # See the interfaces(5) manpage for information on what options are
@@ -70,9 +84,9 @@ iface eth0 inet dhcp
 
 EOF
 
-echo ProdNG-Base > $INSTALL_ROOT/etc/hostname
+echo ProdNG-Base > ${INSTALL_ROOT}/etc/hostname
 
-cat $INSTALL_ROOT/etc/hosts <<EOF
+cat ${INSTALL_ROOT}/etc/hosts <<EOF
 127.0.0.1 localhost ProdNG-Base
 
 # The following lines are desirable for IPv6 capable hosts
@@ -93,11 +107,11 @@ EOF
 
 ## Open a shell for troubleshooting
 #mount -o bind /dev $INSTALL_ROOT/dev
-mount -o bind /proc $INSTALL_ROOT/proc
-mount -o bind /sys $INSTALL_ROOT/sys
-mkdir $INSTALL_ROOT/var/dev
-mount -t tmpfs tmpfs $INSTALL_ROOT/var/dev/shm
-mount -t devpts devpts $INSTALL_ROOT/dev/pts
+mount -o bind /proc ${INSTALL_ROOT}/proc
+mount -o bind /sys ${INSTALL_ROOT}/sys
+mkdir ${INSTALL_ROOT}/var/dev
+mount -t tmpfs tmpfs ${INSTALL_ROOT}/var/dev/shm
+mount -t devpts devpts ${INSTALL_ROOT}/dev/pts
 
 LANG=c chroot $INSTALL_ROOT /bin/bash
 export TERM=xterm-color
