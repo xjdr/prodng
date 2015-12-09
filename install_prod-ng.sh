@@ -26,10 +26,10 @@ parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 1258 20000
 parted -s -- $INSTALL_DISK unit MB mkpart primary xfs  20001 -0
 
 ## Create filesystems
-mkfs.ext2 $INSTALL_DISK1 > /dev/null
-mkfs.ext4 $INSTALL_DISK > /dev/null
-mkfs.xfs -f $INSTALL_DISK3 > /dev/null
-mkfs.xfs -f $INSTALL_DISK4 > /dev/null
+mkfs.ext2 ${INSTALL_DISK}1 > /dev/null
+mkfs.ext4 ${INSTALL_DISK} > /dev/null
+mkfs.xfs -f ${INSTALL_DISK}3 > /dev/null
+mkfs.xfs -f ${INSTALL_DISK}4 > /dev/null
 
 ## Mount the target drive
 mount ${INSTALL_DISK}2 ${INSTALL_ROOT}
@@ -69,7 +69,7 @@ EOF
 
 ## Configure networking
 
-cat ${INSTALL_ROOT}/etc/network/interfacess <<EOF
+cat ${INSTALL_ROOT}/etc/network/interfaces <<EOF
 ######################################################################
 # /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
 # See the interfaces(5) manpage for information on what options are
