@@ -44,9 +44,6 @@ cat > $INSTALL_ROOT/etc/fstab <<EOF
 
 proc             /proc         proc    defaults                 0    0
 
-/dev/fd0         /media/floppy auto    noauto,rw,sync,user,exec 0    0
-/dev/cdrom       /media/cdrom  iso9660 noauto,ro,user,exec      0    0
-
 /dev/sda3        /var          xfs    rw,nosuid,nodev           0    2
 /dev/sda4        /srv          xfs    rw,nodev                  0    2
 
@@ -95,7 +92,7 @@ EOF
 #rm $INSTALL_ROOT/var/log/apt/*
 
 ## Open a shell for troubleshooting
-mount -o bind /dev $INSTALL_ROOT/dev
+#mount -o bind /dev $INSTALL_ROOT/dev
 mount -o bind /proc $INSTALL_ROOT/proc
 mount -o bind /sys $INSTALL_ROOT/sys
 mkdir $INSTALL_ROOT/var/dev
