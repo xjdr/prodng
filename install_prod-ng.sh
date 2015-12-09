@@ -21,6 +21,7 @@ dd if=/dev/zero of=$INSTALL_DISK bs=512 count=4
 ## Create partitions
 parted -s -- $INSTALL_DISK mklabel GPT
 parted -s -- $INSTALL_DISK unit MB mkpart primary ext2 1 256
+parted -s -- $INSTALL_DISK set 1 boot on 
 parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 257 1257
 parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 1258 20000
 parted -s -- $INSTALL_DISK unit MB mkpart primary xfs  20001 -0
@@ -105,12 +106,12 @@ EOF
 #rm $INSTALL_ROOT/var/log/apt/*
 
 ## Open a shell for troubleshooting
-#mount -o bind /dev $INSTALL_ROOT/dev
+mount -o bind /dev $INSTALL_ROOT/dev
 mount -o bind /proc ${INSTALL_ROOT}/proc
 mount -o bind /sys ${INSTALL_ROOT}/sys
 mkdir ${INSTALL_ROOT}/var/dev
-mount -t tmpfs tmpfs ${INSTALL_ROOT}/var/dev/shm
-mount -t devpts devpts ${INSTALL_ROOT}/dev/pts
+#mount -t tmpfs tmpfs ${INSTALL_ROOT}/var/dev/shm
+#mount -t devpts devpts ${INSTALL_ROOT}/dev/pts
 
 LANG=c chroot $INSTALL_ROOT /bin/bash
 export TERM=xterm-color
