@@ -94,24 +94,18 @@ ff02::3 ip6-allhosts
 EOF
 
 ## Cleanup
-rm $INSTALL_ROOT/var/cache/apt/archives/*
-rm $INSTALL_ROOT/var/cache/apt/*.bin
-rm $INSTALL_ROOT/var/lib/apt/lists/*
-rm $INSTALL_ROOT/var/log/dpkg.log*
-rm $INSTALL_ROOT/var/log/apt/*
+rm $INSTALL_ROOT/var/cache/apt/archives/*.deb
 
 ## Open a shell for troubleshooting
 mount -o bind /dev $INSTALL_ROOT/dev
 mount -o bind /proc ${INSTALL_ROOT}/proc
 mount -o bind /sys ${INSTALL_ROOT}/sys
-mkdir ${INSTALL_ROOT}/var/dev
-#mount -t tmpfs tmpfs ${INSTALL_ROOT}/var/dev/shm
-#mount -t devpts devpts ${INSTALL_ROOT}/dev/pts
+
+LANG=C chroot $INSTALL_ROOT /bin/bash
+export TERM=xterm-color
+
+LANG=C DEBIAN_FRONTEND=noninteractive apt-get update
+LANG=C DEBIAN_FRONTEND=noninteractive apt-get install -y sysvinit-core
+LANG=C DEBIAN_FRONTEND=noninteractive apt-get remove --purge --auto-remove systemd
 
 echo "Please insall a bootloader and set a root passwd"
-
-LANG=C chroot $INSTALL_ROOT DEBIAN_FRONTEND=noninteractive apt-get purge systemd
-LANG=C chroot $INSTALL_ROOT DEBIAN_FRONTEND=noninteractive apt-get install -y sysvinit sysvinit-utils
-
-LANG=c chroot $INSTALL_ROOT /bin/bash
-export TERM=xterm-color
