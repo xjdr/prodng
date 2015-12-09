@@ -26,8 +26,8 @@ parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 1258 20000
 parted -s -- $INSTALL_DISK unit MB mkpart primary xfs  20001 -0
 
 ## Create filesystems
-mkfs.ext2 ${INSTALL_DISK}1 > /dev/null
-mkfs.ext4 ${INSTALL_DISK} > /dev/null
+mkfs.ext2 ${INSTALL_DISK}2 > /dev/null
+mkfs.ext4 ${INSTALL_DISK}1 > /dev/null
 mkfs.xfs -f ${INSTALL_DISK}3 > /dev/null
 mkfs.xfs -f ${INSTALL_DISK}4 > /dev/null
 
@@ -68,7 +68,6 @@ EOF
 #locale-gen
 
 ## Configure networking
-
 cat ${INSTALL_ROOT}/etc/network/interfaces <<EOF
 ######################################################################
 # /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)

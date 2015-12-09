@@ -6,4 +6,5 @@ umount /mnt/boot
 umount /mnt/dev
 umount /mnt/proc
 umount /mnt/sys
+umount /mnt/var
 umount /mnt
