@@ -1,7 +1,7 @@
 ProdNG
 ======
 
-Production Server images based on the [ProdNG whitepaper](ProdNG-WhitePaper.pdf).
+Production Server images based on the [ProdNG whitepaper](docs/ProdNG-WhitePaper.pdf).
 
 ## But why?
 Prodng was specifically created for the purpose of running large, distributed
