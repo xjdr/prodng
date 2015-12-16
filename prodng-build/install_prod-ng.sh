@@ -11,7 +11,7 @@ INSTALL_DISK=/dev/sda
 VARIANT=minbase
 ARCH=amd64
 COMPONENTS=main,universe
-PKGS_INCLUDE='ca-certificates, cron, curl, iptables, iputils-ping, isc-dhcp-client, less,libnss-myhostname, man-db, nano, nbd-client, net-tools, ntp, ntpdate, rsyslog, ssh, sudo, vim, wget, whiptail, xnbd-client'
+PKGS_INCLUDE='cron, curl, iptables, iputils-ping, man-db, ntp, ntpdate, ssh, sudo, wget, netbase,ifupdown,net-tools,isc-dhcp-client,linux-base,sysvinit-core,sysvinit-utils,vim-tiny,linux-image-amd64'
 MIRROR=http://cloudfront.debian.net/debian/
 
 ## Ensure you are running as root
@@ -20,13 +20,13 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-get_debootstrap {
-    ## Get debootstrap
-    wget http://ftp.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.75_all.deb
-    ar -x debootstrap_0.X.X_all.deb
-    cd /
-    zcat /prodng/prodng/prodng-build/data.tar.gz | tar xv
-}
+#get_debootstrap {
+#    ## Get debootstrap
+#    wget http://ftp.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.75_all.deb
+#    ar -x debootstrap_0.X.X_all.deb
+#    cd /
+#    zcat /prodng/prodng/prodng-build/data.tar.gz | tar xv
+#}
 ## Ensure disk is empty
 dd if=/dev/zero of=$INSTALL_DISK bs=512 count=4
 
@@ -51,11 +51,11 @@ mount ${INSTALL_DISK}1 ${INSTALL_ROOT}/boot
 mkdir ${INSTALL_ROOT}/var
 mount ${INSTALL_DISK}3 ${INSTALL_ROOT}/var
 
-/usr/sbin/debootstrap --arch $ARCH --variant=$VARIANT --components "$COMPONENTS" --include "$PKGS_INCLUDE" trusty $DEBOOTSTRAP_DIR "$MIRROR"
+/usr/sbin/debootstrap --arch $ARCH --variant=$VARIANT --components "$COMPONENTS" --include "$PKGS_INCLUDE" jessie $INSTALL_ROOT "$MIRROR"
 
 for i in {1..6}
 do
-  Echo manual > $DEBOOTSTRAP_DIR/etc/init/tty$i.override
+  Echo manual > $INSTALL_ROOT/etc/init/tty$i.override
 done
 
 # The list of files required to copy on the template
@@ -66,20 +66,8 @@ FILES_TO_COPY="/etc/init/ttyS0.conf"
 # Upstart job - Fetches ssh-keys associated with your account in `/root/.authorized_keys`
 FILES_TO_COPY+=" /etc/init/ssh-keys.conf"
 
-# Upstart job - Preserves the NBD client process on shutdown
-FILES_TO_COPY+=" /etc/init/nbd-root-preserve-client.conf"
-
-# Upstart job - Gracefully umount and disconnect root volume
-FILES_TO_COPY+=" /etc/init/nbd-root-disconnect.conf"
-
-# Upstart job - Connects additional volumes to NBD server
-FILES_TO_COPY+=" /etc/init/nbd-add-extra-volumes.conf"
-
 # Upstart job - Synchronizes kernel modules
 FILES_TO_COPY+=" /etc/init/sync-kernel-modules.conf"
-
-# This script is required by `/nbd-root-disconnect.conf` to disconnect root volume gracefully.
-FILES_TO_COPY+=" /usr/sbin/nbd-disconnect-root"
 
 # Variables for the behavior of boot scripts
 FILES_TO_COPY+=" /etc/default/rcS"
@@ -96,50 +84,11 @@ FILES_TO_COPY+=" /etc/sysctl.conf"
 # Network interfaces configuration
 FILES_TO_COPY+=" /etc/network/interfaces"
 
-# Executable which synchronizes kernel modules
-FILES_TO_COPY+=" /usr/sbin/oc-sync-kernel-modules"
-
-# Executable which retrieves server metadata (TEXT)
-FILES_TO_COPY+=" /usr/local/bin/oc-metadata"
-
-# Executable which retrieves server metadata (JSON)
-FILES_TO_COPY+=" /usr/local/bin/oc-metadata-json"
-
-# DHCP hook
-FILES_TO_COPY+=" /etc/dhcp/dhclient-exit-hooks.d/hostname"
-
 # Copy files above in the appropriate directory
 for FILE in ${FILES_TO_COPY}
 do
-  cp ${FILE} ${DEBOOTSTRAP_DIR}${FILE}
+  cp ${FILE} ${INSTALL_ROOT}${FILE}
 done
-
-umount $DEBOOTSTRAP_DIR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Install minimal debian 
-debootstrap \
---arch=amd64 \
---variant=minbase \
---include=netbase,ifupdown,net-tools,isc-dhcp-client,linux-base,sysvinit-core,sysvinit-utils,vim-tiny,linux-image-amd64 \
-jessie \
-$INSTALL_ROOT
 
 ##create /etc/fstab
 cat > ${INSTALL_ROOT}/etc/fstab <<EOF
@@ -198,8 +147,8 @@ mount -o bind /sys ${INSTALL_ROOT}/sys
 LANG=C chroot $INSTALL_ROOT /bin/bash
 export TERM=xterm-color
 
-LANG=C DEBIAN_FRONTEND=noninteractive apt-get update
-LANG=C DEBIAN_FRONTEND=noninteractive apt-get install -y sysvinit-core
-LANG=C DEBIAN_FRONTEND=noninteractive apt-get remove --purge --auto-remove systemd
+#LANG=C DEBIAN_FRONTEND=noninteractive apt-get update
+#LANG=C DEBIAN_FRONTEND=noninteractive apt-get install -y sysvinit-core
+#LANG=C DEBIAN_FRONTEND=noninteractive apt-get remove --purge --auto-remove systemd
 
 echo "Please insall a bootloader and set a root passwd"
