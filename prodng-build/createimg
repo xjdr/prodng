@@ -4,8 +4,6 @@ set -ef -o pipefail
 
 #This script will use a tar file and generate a raw image file
 #then convert to bootable vmdk format
-#
-
 
 RAW_FILE=output.raw
 IMAGE_TAR=../minbasebox.tar
