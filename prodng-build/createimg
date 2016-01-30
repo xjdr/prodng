@@ -1,0 +1,71 @@
+#/bin/bash 
+
+set -ef -o pipefail
+
+#This script will use a tar file and generate a raw image file
+#then convert to bootable vmdk format
+#
+
+
+RAW_FILE=output.raw
+IMAGE_TAR=../minbasebox.tar
+
+# create a raw 10g file
+dd if=/dev/zero of=${RAW_FILE} bs=512 count=20971520
+
+LOOP_DEV=`losetup --show -f ${RAW_FILE}`
+losetup -a
+echo $LOOP_DEV
+
+parted -s -- ${LOOP_DEV} mklabel GPT
+#create gpt partition , gpt need a 1mib empty partition for boot
+parted -s -- ${LOOP_DEV} unit MB mkpart primary ext2 1 2
+parted -s -- ${LOOP_DEV} set 1 bios_grub on
+
+#set root partition
+parted -s -- ${LOOP_DEV} unit s mkpart primary ext4 4096 20971486
+
+fdisk -l ${LOOP_DEV}
+
+# 20971520 is the block size of the raw file
+# 7:0 is the major, minor number for loop dev
+echo '0 20971520 linear 7:0 0'|dmsetup create hda
+dmsetup info hda
+
+sleep 15
+kpartx -a /dev/mapper/hda
+kpartx -l /dev/mapper/hda
+
+sleep 15
+mkfs.ext4 /dev/mapper/hda2
+
+mount /dev/mapper/hda2 /mnt
+
+cd /mnt
+tar -xvf ${IMAGE_TAR} >/dev/null 2>&1
+mkdir sys proc dev
+
+mount -o bind /sys /mnt/sys
+mount -o bind /dev /mnt/dev
+mount -o bind /proc /mnt/proc
+
+cat >/mnt/boot/grub/device.map<<EOF
+(hd0) /dev/dm-0
+EOF
+
+chroot /mnt grub-install --recheck --target=i386-pc $LOOP_DEV
+
+chroot /mnt update-grub
+
+#tear down and cleanup
+cd ..
+
+umount /mnt/sys /mnt/dev /mnt/proc
+umount /mnt
+
+kpartx -d /dev/mapper/hda
+dmsetup remove hda
+losetup -d $LOOP_DEV
+
+qemu-img convert -O vmdk output.raw output.vmdk
+
