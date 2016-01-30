@@ -2,7 +2,7 @@
 
 set -ef -o pipefail
 
-# This script assumes that btrfs-tools and parted are installed on the
+# This script assumes that debootstrap btrfs-tools xfsprogs and parted are installed on the
 # host system. As we are manipulating disks this script needs to be run
 # as root.
 
@@ -20,13 +20,14 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-#get_debootstrap {
-#    ## Get debootstrap
-#    wget http://ftp.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.75_all.deb
-#    ar -x debootstrap_0.X.X_all.deb
-#    cd /
-#    zcat /prodng/prodng/prodng-build/data.tar.gz | tar xv
-#}
+get_debootstrap() {
+    ## Get debootstrap
+    wget http://ftp.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.75_all.deb
+    ar -x debootstrap_0.X.X_all.deb
+    cd /
+    zcat /prodng/prodng/prodng-build/data.tar.gz | tar xv
+}
+
 ## Ensure disk is empty
 dd if=/dev/zero of=$INSTALL_DISK bs=512 count=4
 
@@ -35,14 +36,14 @@ parted -s -- $INSTALL_DISK mklabel GPT
 parted -s -- $INSTALL_DISK unit MB mkpart primary ext2 1 256
 parted -s -- $INSTALL_DISK set 1 boot on 
 parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 257 1257
-parted -s -- $INSTALL_DISK unit MB mkpart primary ext4 1258 20000
-parted -s -- $INSTALL_DISK unit MB mkpart primary xfs  20001 -0
+parted -s -- $INSTALL_DISK unit MB mkpart primary xfs 1258 20000
+parted -s -- $INSTALL_DISK unit MB mkpart primary btrfs  20001 -0
 
 ## Create filesystems
 mkfs.ext2 ${INSTALL_DISK}2 > /dev/null
 mkfs.ext4 ${INSTALL_DISK}1 > /dev/null
 mkfs.xfs -f ${INSTALL_DISK}3 > /dev/null
-mkfs.xfs -f ${INSTALL_DISK}4 > /dev/null
+mkfs.btrfs ${INSTALL_DISK}4 > /dev/null
 
 ## Mount the target drive
 mount ${INSTALL_DISK}2 ${INSTALL_ROOT}
@@ -101,8 +102,8 @@ ${INSTALL_DISK}1        /boot         ext2    ro,nosuid,nodev          0    2
 
 proc                    /proc         proc    defaults                 0    0
 
-${INSTALL_DISK}3        /var          xfs    rw,nosuid,nodev           0    2
-${INSTALL_DISK}4        /srv          xfs    rw,nodev                  0    2
+${INSTALL_DISK}3        /var          xfs     rw,nosuid,nodev          0    2
+${INSTALL_DISK}4        /srv          btrfs   rw,nodev                 0    2
 
 EOF
 
