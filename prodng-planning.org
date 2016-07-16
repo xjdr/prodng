@@ -1,0 +1,29 @@
+* Design
+** Make ZFS default FS (keep /boot ext4)
+
+* Refactor
+** Build a tool to bootstrap a build env
+** Rebuld PBS to use github sources
+
+* Build System
+** Build and Sign all packages
+** Host build src on github
+** Host artifacts on github
+** Hardening Standards
+
+* Agent
+** re-write in C++ (or D?)
+
+* Cloud Image Builder
+** Optimize for each cloud provider
+*** GCE
+https://cloud.google.com/compute/docs/tutorials/building-images
+gce cli tools
+
+*** AWS
+SR-IOV in kernel
+aws cli tools
+
+*** Azure
+Hyper-V in kernel
+waagent
