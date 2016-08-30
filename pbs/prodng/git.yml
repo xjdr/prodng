@@ -1,0 +1,24 @@
+- dep:
+    name: g/gdbm/libgdbm3_1.8.3-13.1_amd64.deb
+    repo: apt2
+- dep:
+    name: p/perl/perl_5.20.2-3+deb8u5_amd64.deb
+    repo: apt2
+- dep:
+    name: p/perl/perl-modules_5.20.2-3+deb8u5_all.deb
+    repo: apt2
+- dep:
+    name: libe/liberror-perl/liberror-perl_0.17-1.1_all.deb
+    repo: apt2
+- dep:
+    name: libs/libssh2/libssh2-1_1.4.3-4.1+deb8u1_amd64.deb
+    repo: main
+- dep:
+    name: c/curl/libcurl3-gnutls_7.38.0-4+deb8u3_amd64.deb
+    repo: apt2
+- dep:
+    name: g/git/git-man_2.1.4-2.1+deb8u2_all.deb
+    repo: apt2
+- dep:
+    name: g/git/git_2.1.4-2.1+deb8u2_amd64.deb
+    repo: apt2

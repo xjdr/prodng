@@ -1,0 +1,124 @@
+- dep:
+    name: s/syslinux/extlinux_6.03+dfsg-5+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: k/kmod/kmod_18-3_amd64.deb
+    repo: apt2
+- dep:
+    name: k/klibc/libklibc_2.0.4-2_amd64.deb
+    repo: apt2
+- dep:
+    name: k/klibc/klibc-utils_2.0.4-2_amd64.deb
+    repo: apt2
+- dep:
+    name: i/initramfs-tools/initramfs-tools_0.120+deb8u2_all.deb
+    repo: apt2
+- dep:
+    name: l/linux-source-4.7.0-prodng+/linux-headers-4.7.0-prodng+_1_amd64.deb  
+    repo: apt2
+- dep:
+    name: l/linux-source-4.7.0-prodng+/linux-image-4.7.0-prodng+_1_amd64.deb
+    repo: apt2
+- dep:
+    name: e2fsprogs/libss2_1.42.12-1.1_amd64.deb
+    repo: apt2
+- dep:
+    name: e2fsprogs/e2fsprogs_1.42.12-1.1_amd64.deb
+    repo: apt2
+- dep:
+    name: l/lvm2/libdevmapper1.02.1_1.02.90-2.2+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: l/lvm2/dmsetup_1.02.90-2.2+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: parted/libparted2_3.2-7_amd64.deb
+    repo: apt2
+- dep:
+    name: parted/parted_3.2-7_amd64.deb
+    repo: apt2
+#Just add puppet :(
+- dep:
+    name: p/pciutils/libpci3_1%253a3.2.1-3_amd64.deb
+    repo: apt2
+- dep:
+    name: liby/libyaml/libyaml-0-2_0.1.6-3_amd64.deb 
+    repo: apt2
+- dep:
+    name: d/dmidecode/dmidecode_2.12-3_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/liblwres90_1%253a9.9.5.dfsg-9%2bdeb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/bind9-host_1%253a9.9.5.dfsg-9%2bdeb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: p/pciutils/pciutils_1%253a3.2.1-3_amd64.deb
+    repo: apt2
+- dep:
+    name: a/augeas/augeas-lenses_1.2.0-0.2+deb8u1_all.deb
+    repo: apt2
+- dep:
+    name: d/debconf/debconf-utils_1.5.56_all.deb
+    repo: apt2
+- dep:
+    name: r/ruby2.1/ruby2.1_2.1.5-2+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: r/rubygems-integration/rubygems-integration_1.8_all.deb
+    repo: apt2
+- dep:
+    name: r/ruby2.1/ruby2.1_2.1.5-2+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: r/ruby2.1/libruby2.1_2.1.5-2+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: r/ruby2.1/libruby2.1_2.1.5-2+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: r/ruby-defaults/ruby_1%253a2.1.5%2bdeb8u2_all.deb
+    repo: apt2
+- dep:
+    name: r/ruby-json/ruby-json_1.8.1-1+b2_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/host_9.9.5.dfsg-9+deb8u6_all.deb
+    repo: apt2
+- dep:
+    name: f/facter/facter_2.2.0-1_all.deb
+    repo: apt2
+- dep:
+    name: h/hiera/hiera_1.3.4-1_all.deb
+    repo: apt2
+- dep:
+    name: j/javascript-common/javascript-common_11_all.deb
+    repo: apt2
+- dep:
+    name: a/augeas/libaugeas0_1.2.0-0.2+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: j/jquery/libjs-jquery_1.7.2+dfsg-3.2_all.deb 
+    repo: apt2
+- dep:
+    name: l/lsb/lsb-release_4.1+Debian13+nmu1_all.deb
+    repo: apt2
+- dep:
+    name: r/ruby-augeas/ruby-augeas_0.5.0-2+b2_amd64.deb
+    repo: apt2
+- dep:
+    name: h/hiera/ruby-hiera_1.3.4-1_all.deb
+    repo: apt2
+- dep:
+    name: r/ruby-safe-yaml/ruby-safe-yaml_1.0.3-1_all.deb
+    repo: apt2
+- dep:
+    name: r/ruby-shadow/ruby-shadow_2.3.4-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/puppet/puppet-common_3.7.2-4_all.deb
+    repo: apt2
+- dep:
+    name: p/puppet/puppet_3.7.2-4_all.deb
+    repo: apt2

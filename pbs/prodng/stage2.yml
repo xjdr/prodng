@@ -1,0 +1,49 @@
+- dep:
+    name: "libc/libcap2/libcap2_2.24-8_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "d/dpkg/dpkg_1.17.27_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "s/sensible-utils/sensible-utils_0.0.9_all.deb"
+    repo: 'apt2'
+- dep:
+    name: "g/gmp/libgmp10_6.0.0+dfsg-6_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "c/coreutils/coreutils_8.23-4_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "f/findutils/findutils_4.4.2-9_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "c/cdebconf/libdebconfclient0_0.192_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "b/base-passwd/base-passwd_3.5.37_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "d/debianutils/debianutils_4.4_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "s/sed/sed_4.2.2-4_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "g/grep/grep_2.20-4.1_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "d/diffutils/diffutils_3.3-1_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "d/dash/dash_0.5.7-4_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "n/ncurses/ncurses-term_5.9+20140913-1_all.deb"
+    repo: 'apt2'
+- dep:
+    name: "b/base-files/base-files_8+deb8u5_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "b/bash/bash_4.3-11_amd64.deb"
+    repo: 'main'

@@ -1,0 +1,39 @@
+- dep:
+    name: g/gpm/libgpm2_1.20.4-6.1_amd64.deb
+    repo: apt2
+- dep:
+    name: v/vim/vim-common_7.4.488-7_amd64.deb
+    repo: main
+- dep:
+    name: v/vim/vim-runtime_7.4.488-7_all.deb
+    repo: main
+- dep:
+    name: v/vim/vim_7.4.488-7_amd64.deb
+    repo: main
+- dep:
+    name: libe/libevent/libevent-2.0-5_2.0.21-stable-2_amd64.deb
+    repo: apt2
+- dep:
+    name: t/tmux/tmux_1.9-6_amd64.deb
+    repo: apt2
+- dep:
+    name: libu/libusb-1.0/libusb-1.0-0_1.0.20-1_amd64.deb
+    repo: apt2
+- dep:
+    name: s/strace/strace_4.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: d/dbus/libdbus-1-3_1.8.20-0+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: libp/libpcap/libpcap0.8_1.7.4-2_amd64.deb
+    repo: apt2
+- dep:
+    name: t/tcpdump/tcpdump_4.6.2-5+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: c/curl/libcurl3_7.38.0-4+deb8u3_amd64.deb
+    repo: apt2
+- dep:
+    name: c/curl/curl_7.38.0-4+deb8u3_amd64.deb
+    repo: apt2
