@@ -1,0 +1,369 @@
+- dep: 
+    name: libb/libbsd/libbsd0_0.7.0-2_amd64.deb
+    repo: apt2
+- dep: 
+    name: libe/libedit/libedit2_3.1-20140620-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/perl/perl-base_5.20.2-3+deb8u5_amd64.deb
+    repo: apt2
+- dep:
+    name: a/audit/libaudit-common_2.4-1_all.deb
+    repo: apt2
+- dep:
+    name: a/audit/libaudit1_2.4-1_amd64.deb
+    repo: apt2
+- dep:
+    name: d/debconf/debconf_1.5.56_all.deb
+    repo: apt2
+- dep:
+    name: "libs/libsemanage/libsemanage-common_2.3-1_all.deb"
+    repo: apt2
+- dep:
+    name: "libs/libsepol/libsepol1_2.3-2_amd64.deb"
+    repo: apt2
+- dep:
+    name: "u/ustr/libustr-1.0-1_1.0.4-3_amd64.deb"
+    repo: apt2
+- dep:
+    name: "d/db5.3/libdb5.3_5.3.28-9_amd64.deb"
+    repo: apt2
+- dep:
+    name: "p/pam/libpam0g_1.1.8-3.1+deb8u1+b1_amd64.deb"
+    repo: main
+- dep:
+    name: "p/pam/libpam-modules-bin_1.1.8-3.1+deb8u1_amd64.deb"
+    repo: apt2
+- dep:
+    name: "libs/libsemanage/libsemanage1_2.3-1_amd64.deb"
+    repo: apt2
+- dep:
+    name: "p/pam/libpam-modules_1.1.8-3.1+deb8u1_amd64.deb"
+    repo: apt2
+- dep:
+    name: "p/pam-common-prodng/pam-config-prodng-0.1.0.deb"
+    repo: apt
+- dep:
+    name: s/shadow/passwd_4.2-3+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: a/adduser/adduser_3.113+nmu3_all.deb
+    repo: apt2
+- dep:
+    name: a/autogen/libopts25_5.18.4-3_amd64.deb
+    repo: apt2
+- dep:
+    name: o/openssl/libssl1.0.0_1.0.1t-1+deb8u2_amd64.deb   
+    repo: apt2
+- dep:
+    name: o/openssl/openssl_1.0.1t-1+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: c/ca-certificates/ca-certificates_20141019+deb8u1_all.deb
+    repo: apt2
+- dep:
+    name: l/lsb/lsb-base_4.1+Debian13+nmu1_all.deb
+    repo: apt2
+- dep:
+    name: n/netbase/netbase_5.3_all.deb
+    repo: apt2
+- dep:
+    name: p/pam/libpam-runtime_1.1.8-3.1+deb8u1_all.deb
+    repo: apt2
+- dep:
+    name: s/startpar/startpar_0.59-3_amd64.deb
+    repo: apt2
+- dep:
+    name: i/insserv/insserv_1.14.0-5_amd64.deb
+    repo: apt2
+- dep:
+    name: i/init-system-helpers/init-system-helpers_1.22_all.deb
+    repo: apt2
+- dep:
+    name: s/sysvinit/sysvinit-utils_2.88dsf-59_amd64.deb  
+    repo: apt2
+- dep:
+    name: s/sysvinit/sysv-rc_2.88dsf-59_all.deb
+    repo: apt2
+- dep:
+    name: s/shadow/login_4.2-3+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: n/ntp/ntp_4.2.6.p5+dfsg-7+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: n/ncurses/libncursesw5_5.9+20140913-1_amd64.deb 
+    repo: apt2
+- dep:
+    name: k/kmod/libkmod2_18-3_amd64.deb
+    repo: apt2
+- dep:
+    name: u/util-linux/libuuid1_2.25.2-6_amd64.deb
+    repo: apt2
+- dep:
+    name: u/util-linux/libblkid1_2.25.2-6_amd64.deb
+    repo: apt2
+- dep:
+    name: j/json-c/libjson-c2_0.11-4_amd64.deb
+    repo: main
+- dep:
+    name: libe/libestr/libestr0_0.1.9-1.1_amd64.deb
+    repo: apt2
+- dep:
+    name: libl/liblognorm/liblognorm1_1.0.1-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/systemd/libudev1_215-17+deb8u4_amd64.deb
+    repo: main
+- dep:
+    name: p/procps/libprocps3_3.3.9-9_amd64.deb
+    repo: apt2
+- dep:
+    name: u/util-linux/libmount1_2.25.2-6_amd64.deb
+    repo: apt2
+- dep:
+    name: u/util-linux/libsmartcols1_2.25.2-6_amd64.deb
+    repo: apt2
+- dep:
+    name: s/slang2/libslang2_2.3.0-2_amd64.deb
+    repo: main
+- dep:
+    name: u/util-linux/mount_2.25.2-6_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sysvinit/initscripts_2.88dsf-59_amd64.deb
+    repo: apt2
+
+- dep:
+    name: p/procps/procps_3.3.9-9_amd64.deb
+    repo: apt2
+- dep:
+    name: t/tzdata/tzdata_2016d-0+deb8u1_all.deb
+    repo: apt2
+- dep:
+    name: u/util-linux/util-linux_2.25.2-6_amd64.deb
+    repo: apt2
+- dep:
+    name: s/systemd/udev_215-17+deb8u4_amd64.deb
+    repo: main
+- dep:
+    name: s/syslinux/syslinux-common_6.03+dfsg-5+deb8u1_all.deb
+    repo: apt2
+- dep:
+    name: s/sysvinit/sysvinit-core_2.88dsf-59_amd64.deb
+    repo: apt2
+- dep:
+    name: g/gzip/gzip_1.6-4_amd64.deb
+    repo: apt2
+- dep:
+    name: e/e2fsprogs/e2fslibs_1.42.12-1.1_amd64.deb
+    repo: apt2
+- dep:
+    name: e/e2fsprogs/libcomerr2_1.42.12-1.1_amd64.deb 
+    repo: apt2
+- dep:
+    name: l/lzo2/liblzo2-2_2.08-1.2_amd64.deb 
+    repo: apt2
+- dep:
+    name: c/cgroupfs-mount/cgroupfs-mount_1.3_all.deb
+    repo: main
+- dep:
+    name: c/cpio/cpio_2.11+dfsg-4.1+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: g/gcc-4.9/libstdc++6_4.9.2-10_amd64.deb
+    repo: apt2
+- dep:
+    name: sudo/sudo_1.8.10p3-1+deb8u3_amd64.deb
+    repo: apt2
+- dep:
+    name: libg/libgpg-error/libgpg-error0_1.17-3_amd64.deb
+    repo: apt2
+- dep:
+    name: r/readline6/readline-common_6.3-8_all.deb
+    repo: apt2
+- dep:
+    name: r/readline6/libreadline6_6.3-8_amd64.deb
+    repo: apt2
+    
+- dep:
+    name: a/apt/libapt-pkg4.12_1.0.9.8.3_amd64.deb
+    repo: apt2
+- dep:
+    name: libg/libgcrypt20/libgcrypt20_1.6.3-2+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: o/osquery/osquery-1.7.0-145-g75e8642.deb
+    repo: apt
+- dep:
+    name: p/prodng-agent/prodng-agent-1.1.0.deb
+    repo: apt
+- dep:
+    name: g/glibc/libc-dev-bin_2.19-18+deb8u4_amd64.deb
+    repo: apt2
+- dep:
+    name: l/linux/linux-libc-dev_3.16.7-ckt25-2_amd64.deb
+    repo: apt2
+- dep:
+    name: g/glibc/libc6-dev_2.19-18+deb8u4_amd64.deb
+    repo: apt2
+- dep:
+    name: e/expat/libexpat1_2.1.0-6+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: e/expat/libexpat1-dev_2.1.0-6+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: e/expat/expat_2.1.0-6+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python2.7/libpython2.7-minimal_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: libf/libffi/libffi6_3.1-2_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sqlite3/libsqlite3-0_3.8.7.1-1+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: m/mime-support/mime-support_3.58_all.deb
+    repo: apt2
+- dep:
+    name: p/python2.7/libpython2.7-stdlib_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python-defaults/libpython-stdlib_2.7.9-1_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python2.7/python2.7-minimal_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python2.7/python2.7_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python-defaults/python-minimal_2.7.9-1_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python-defaults/python_2.7.9-1_amd64.deb
+    repo: apt2
+
+#python-dev and its deps
+- dep:
+    name: p/python2.7/libpython2.7_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python2.7/libpython2.7-dev_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python2.7/python2.7-dev_2.7.9-2_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python-defaults/libpython-dev_2.7.9-1_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python-defaults/python-dev_2.7.9-1_amd64.deb
+    repo: apt2
+#deps for pip
+- dep:
+    name: p/python-setuptools/python-pkg-resources_5.5.1-1_all.deb
+    repo: apt2
+- dep:
+    name: p/python-setuptools/python-setuptools_5.5.1-1_all.deb
+    repo: apt2
+- dep:
+    name: libi/libidn/libidn11_1.29-1+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: p/python-colorama/python-colorama_0.3.2-1_all.deb
+    repo: apt2
+- dep:
+    name: d/distlib/python-distlib_0.1.9-1_all.deb
+    repo: apt2
+- dep:
+    name: c/chardet/python-chardet_2.3.0-1_all.deb
+    repo: apt2
+- dep:
+    name: s/six/python-six_1.8.0-1_all.deb
+    repo: apt2
+- dep:
+    name: h/html5lib/python-html5lib_0.999-3_all.deb
+    repo: apt2
+- dep:
+    name: p/python-urllib3/python-urllib3_1.9.1-3_all.deb
+    repo: apt2
+- dep:
+    name: r/requests/python-requests_2.4.3-6_all.deb
+    repo: apt2
+- dep:
+    name: p/python-pip/python-pip_1.5.6-5_all.deb
+    repo: apt2
+#Dep for agent
+- dep:
+    name: s/snappy/libsnappy1_1.1.2-3_amd64.deb
+    repo: apt2
+#Ca certs for https transport:
+#Deps from git/apt needed for python too
+- dep:
+    name: libt/libtasn1-6/libtasn1-6_4.2-3+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: n/nettle/libnettle4_2.7.1-5+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: n/nettle/libhogweed2_2.7.1-5+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: p/p11-kit/libp11-kit0_0.20.7-1_amd64.deb
+    repo: main
+- dep:
+    name: g/gnutls28/libgnutls-deb0-28_3.3.8-6+deb8u3_amd64.deb
+    repo: apt2
+- dep:
+    name: l/less/less_458-3_amd64.deb
+    repo: apt2
+#Deps from git/apt needed for ZFS
+- dep:
+    name: libn/libnvpair1/libnvpair1_0.6.5.6-8_amd64.deb
+    repo: apt
+- dep:
+    name: libz/libzpool2/libzpool2_0.6.5.6-8_amd64.deb
+    repo: apt
+- dep:
+    name: libz/libzfs2/libzfs2_0.6.5.6-8_amd64.deb
+    repo: apt
+- dep:
+    name: libz/libzfs2-devel/libzfs2-devel_0.6.5.6-8_amd64.deb
+    repo: apt
+- dep:
+    name: libu/libuutil1/libuutil1_0.6.5.6-8_amd64.deb
+    repo: apt
+- dep:
+    name: k/kmod-zfs-4.5.0-prodng+/kmod-zfs-4.5.0-prodng+_0.6.5.6-8_amd64.deb
+    repo: apt
+- dep:
+    name: z/zfs-dracut/zfs-dracut_0.6.5.6-8_amd64.deb 
+    repo: apt
+- dep:
+    name: z/zfs-test/zfs-test_0.6.5.6-8_amd64.deb   
+    repo: apt
+- dep:
+    name: z/zfs-initramfs/zfs-initramfs_0.6.5.6-8_amd64.deb     
+    repo: apt
+- dep:
+    name: z/zfs/zfs_0.6.5.6-8_amd64.deb  
+    repo: apt
+- dep:
+    name: p/popt/libpopt0_1.16-10_amd64.deb
+    repo: apt
+- dep:
+    name: r/rsync/rsync_3.1.1-3_amd64.deb 
+    repo: apt2
+- dep:
+    name: l/ldapextras-1.2/ldapextras-1.2.deb
+    repo: apt
+- dep:
+    name: n/ncurses/ncurses-bin_5.9+20140913-1_amd64.deb
+    repo: apt2
+- dep:
+    name: r/rtmpdump/librtmp1_2.4+20150115.gita107cef-1_amd64.deb
+    repo: apt2

@@ -1,0 +1,139 @@
+#http://security.debian.org/debian-security/pool/updates/main
+#http://ftp.us.debian.org/debian/pool/main
+
+- dep:
+    name: "g/glibc/libc6_2.19-18+deb8u4_amd64.deb"
+    repo: 'apt2'
+    format: 'gz'
+- dep:
+    name: "g/glibc/libc-bin_2.19-18+deb8u4_amd64.deb"
+    repo: 'apt2'
+    format: 'gz'
+- dep:
+    name: "g/glibc/multiarch-support_2.19-18+deb8u4_amd64.deb"
+    repo: 'apt2'
+    format: 'gz'
+- dep:
+    name: "m/mawk/mawk_1.3.3-17_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "b/base-files/base-files_8+deb8u5_amd64.deb"
+    repo: 'apt2'
+    format: 'gz'
+- dep:
+    name: "b/base-passwd/base-passwd_3.5.37_amd64.deb"
+    repo: 'apt2'
+    format: 'gz'
+- dep:
+    name: "s/sensible-utils/sensible-utils_0.0.9_all.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "n/ncurses/libncurses5_5.9+20140913-1_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "g/gcc-4.9/libgcc1_4.9.2-10_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "g/gcc-4.9/gcc-4.9-base_4.9.2-10_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "b/bash/bash_4.3-11_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "d/dash/dash_0.5.7-4_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "n/ncurses/libtinfo5_5.9+20140913-1_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "n/ncurses/ncurses-base_5.9+20140913-1_all.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "g/gmp/libgmp10_6.0.0+dfsg-6_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "c/coreutils/coreutils_8.23-4_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "a/acl/libacl1_2.2.52-2_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "a/attr/libattr1_2.4.47-2_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "libs/libselinux/libselinux1_2.3-2_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "b/bzip2/libbz2-1.0_1.0.6-7_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "x/xz-utils/liblzma5_5.1.1alpha+20120614-2_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "z/zlib/zlib1g_1.2.8.dfsg-2_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "t/tar/tar_1.27.1-2_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "p/pcre3/libpcre3_8.35-3.3+deb8u4_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "f/findutils/findutils_4.4.2-9_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "libc/libcap2/libcap2_2.24-8_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "c/cdebconf/libdebconfclient0_0.192_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "d/debianutils/debianutils_4.4_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "s/sed/sed_4.2.2-4_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "g/grep/grep_2.20-4.1_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "d/diffutils/diffutils_3.3-1_amd64.deb"
+    repo: 'apt2'
+    format: 'xz'
+- dep:
+    name: "n/ncurses/libncurses5_5.9+20140913-1_amd64.deb"
+    repo: apt2
+    format: 'xz'
+- dep:
+    name: "n/ncurses/ncurses-term_5.9+20140913-1_all.deb"
+    repo: apt2
+    format: 'xz'
+- dep:
+    name: "d/dpkg/dpkg_1.17.27_amd64.deb"
+    repo: 'apt2'
+    format: 'gz'

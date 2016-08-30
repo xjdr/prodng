@@ -1,0 +1,169 @@
+- dep:
+    name: o/openldap/libldap-2.4-2_2.4.40+dfsg-1+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: c/cyrus-sasl2/libsasl2-2_2.1.26.dfsg1-15_amd64.deb
+    repo: apt2
+- dep:
+    name: c/cyrus-sasl2/libsasl2-modules-db_2.1.26.dfsg1-15_amd64.deb
+    repo: apt2
+    
+#LDAP
+- dep:
+    name: s/sssd/sssd_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/python-sss_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: d/dbus/libdbus-1-3_1.8.20-0+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: d/ding-libs/libdhash1_0.4.0-1_amd64.deb
+    repo: apt2
+- dep:
+    name: l/ldb/libldb1_1.1.20-0+deb8u1_amd64.deb
+    repo: main
+- dep:
+    name: t/talloc/libtalloc2_2.1.7-1_amd64.deb
+    repo: apt2
+- dep:
+    name: t/tdb/libtdb1_1.3.9-1_amd64.deb
+    repo: apt2
+- dep:
+    name: t/tevent/libtevent0_0.9.28-1_amd64.deb
+    repo: apt2
+- dep:
+    name: n/nspr/libnspr4_4.10.7-1+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-ad_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/libsss-idmap0_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/samba/samba-libs_4.2.10+dfsg-0+deb8u3_amd64.deb
+    repo: main
+- dep:
+    name: n/nss/libnss3_3.17.2-1.1+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-ipa_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/libipa-hbac0_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: g/glib2.0/libglib2.0-0_2.49.5-1_amd64.deb
+    repo: main
+- dep:
+    name: s/sssd/sssd-krb5-common_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-ldap_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-proxy_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: d/ding-libs/libbasicobjects0_0.4.0-1_amd64.deb
+    repo: apt2
+- dep:
+    name: d/ding-libs/libcollection4_0.4.0-1_amd64.deb
+    repo: apt2
+- dep:
+    name: d/ding-libs/libini-config5_0.4.0-1_amd64.deb
+    repo: apt2
+- dep:
+    name: d/ding-libs/libpath-utils1_0.4.0-1_amd64.deb
+    repo: apt2
+- dep:
+    name: d/ding-libs/libref-array1_0.4.0-1_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-krb5_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-common_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: c/c-ares/libc-ares2_1.10.0-2_amd64.deb
+    repo: apt2
+- dep:
+    name: libn/libnl3/libnl-3-200_3.2.24-2_amd64.deb
+    repo: apt2
+- dep:
+    name: libn/libnl3/libnl-route-3-200_3.2.24-2_amd64.deb
+    repo: apt2
+- dep:
+    name: c/cups/libcups2_2.1.4-4_amd64.deb
+    repo: apt2
+- dep:
+    name: a/avahi/libavahi-client3_0.6.31-5_amd64.deb
+    repo: apt2
+- dep:
+    name: a/avahi/libavahi-common3_0.6.31-5_amd64.deb
+    repo: apt2
+- dep:
+    name: a/avahi/libavahi-common-data_0.6.31-5_amd64.deb
+    repo: apt2
+- dep:
+    name: n/ntdb/libntdb1_1.0-5_amd64.deb
+    repo: apt2
+- dep:
+    name: s/samba/libwbclient0_4.4.5+dfsg-2_amd64.deb
+    repo: main
+- dep:
+    name: t/talloc/python-talloc_2.1.7-1_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/sssd-ad-common_1.11.7-3_amd64.deb
+    repo: apt2
+
+#adding more deps 
+- dep:
+    name: o/openldap/ldap-utils_2.4.40+dfsg-1+deb8u2_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/libisc95_9.9.5.dfsg-9+deb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/libisccc90_9.9.5.dfsg-9+deb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: libx/libxml2/libxml2_2.9.1+dfsg1-5+deb8u2_amd64.deb  
+    repo: apt2
+- dep:
+    name: c/cracklib2/libcrack2_2.9.2-1_amd64.deb
+    repo: apt2
+- dep:
+    name: g/geoip/libgeoip1_1.6.2-4_amd64.deb
+    repo: apt2
+- dep:
+    name: /b/bind9/libdns100_9.9.5.dfsg-9+deb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/libbind9-90_9.9.5.dfsg-9+deb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: b/bind9/libisccfg90_9.9.5.dfsg-9+deb8u6_amd64.deb
+    repo: apt2
+- dep:
+    name: libp/libpwquality/libpwquality-common_1.2.3-1_all.deb
+    repo: apt2
+- dep:
+    name: libp/libpwquality/libpwquality1_1.2.3-1_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/libpam-sss_1.11.7-3_amd64.deb
+    repo: apt2
+- dep:
+    name: g/glib2.0/libglib2.0-data_2.49.4-1_all.deb
+    repo: main
+- dep:
+    name: libp/libpwquality/libpam-pwquality_1.2.3-1_amd64.deb
+    repo: apt2
+- dep:
+    name: s/sssd/libnss-sss_1.11.7-3_amd64.deb
+    repo: apt2

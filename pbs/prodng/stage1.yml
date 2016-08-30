@@ -1,0 +1,59 @@
+--- 
+- dep:
+    name: "g/gcc-4.9/gcc-4.9-base_4.9.2-10_amd64.deb"
+    repo: 'apt2'
+- dep:
+    name: "g/gcc-4.9/libgcc1_4.9.2-10_amd64.deb"
+    repo: 'apt2'
+-
+  dep:
+    name: glibc/libc6_2.19-18+deb8u4_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: g/glibc/multiarch-support_2.19-18+deb8u4_amd64.deb
+    repo: apt2
+-
+  dep:
+    name: p/pcre3/libpcre3_8.35-3.3+deb8u4_amd64.deb
+    repo: apt2
+-
+  dep:
+    name: libs/libselinux/libselinux1_2.3-2_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: m/mawk/mawk_1.3.3-17_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: n/ncurses/libtinfo5_5.9+20140913-1_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: a/attr/libattr1_2.4.47-2_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: b/bzip2/libbz2-1.0_1.0.6-7_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: zlib/zlib1g_1.2.8.dfsg-2_amd64.deb
+    repo: apt2
+-
+  dep:
+    name: a/acl/libacl1_2.2.52-2_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: t/tar/tar_1.27.1-2_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: x/xz-utils/liblzma5_5.1.1alpha+20120614-2_amd64.deb
+    repo: apt2
+- 
+  dep: 
+    name: n/ncurses/libncurses5_5.9+20140913-1_amd64.deb
+    repo: apt2

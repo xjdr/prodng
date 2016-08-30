@@ -1,0 +1,60 @@
+----
+#http://security.debian.org/debian-security/pool/updates/main
+#http://ftp.us.debian.org/debian/pool/main
+
+- dep:
+    name: "glibc/libc6_2.19-18+deb8u3_amd64.deb"
+    repo: 'security'
+    format: 'gz'
+- dep:
+    name: "xz-utils/liblzma5_5.1.1alpha+20120614-2+b3_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "glibc/multiarch-support_2.19-18+deb8u3_amd64.deb"
+    repo: 'security'
+    format: 'gz'   
+- dep:
+    name: "mawk/mawk_1.3.3-17_amd64.deb"
+    repo: 'main'
+    format: 'gz'    
+- dep:
+    name: "ncurses/libncurses5_5.9+20140913-1+b1_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "dash/dash_0.5.7-4+b1_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "ncurses/libtinfo5_5.9+20140913-1+b1_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "acl/libacl1_2.2.52-2_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "attr/libattr1_2.4.47-2_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "libs/libselinux/libselinux1_2.3-2_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "bzip2/libbz2-1.0_1.0.6-7+b3_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "zlib/zlib1g_1.2.8.dfsg-2+b1_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "tar/tar_1.27.1-2+b1_amd64.deb"
+    repo: 'main'
+    format: 'xz'
+- dep:
+    name: "pcre3/libpcre3_8.35-3.3+deb8u2_amd64.deb"
+    repo: 'main'
+    format: 'xz'

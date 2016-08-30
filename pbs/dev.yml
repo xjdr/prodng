@@ -1,0 +1,44 @@
+version: 0.6
+env:
+  target: '/tmp/prodng_chroot'
+stages:
+  - dep:
+      group: 'prodng'
+      artifact: 'defaults'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'stage1'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'stage2'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'system'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'networking'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'development'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'apt'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'git'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'ldap'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'physical'
+      version: '0.1'

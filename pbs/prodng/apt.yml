@@ -1,0 +1,15 @@
+- dep:
+    name: g/gnupg/gpgv_1.4.18-7+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: debian-archive-keyring/debian-archive-keyring_2014.3_all.deb
+    repo: apt2
+- dep:
+    name: libu/libusb/libusb-0.1-4_0.1.12-25_amd64.deb
+    repo: apt2
+- dep:
+    name: g/gnupg/gnupg_1.4.18-7+deb8u1_amd64.deb
+    repo: apt2
+- dep:
+    name: a/apt/apt_1.0.9.8.3_amd64.deb
+    repo: apt2

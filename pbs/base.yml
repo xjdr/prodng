@@ -1,0 +1,28 @@
+version: 0.5
+env:
+  target: 'tmp/prodng_chroot'
+stages:
+  - dep:
+      group: 'prodng'
+      artifact: 'defaults'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'stage1'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'stage2'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'system'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'networking'
+      version: '0.1'
+  - dep:
+      group: 'prodng'
+      artifact: 'physical'
+      version: '0.1'
