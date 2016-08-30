@@ -4,6 +4,9 @@ ProdNG
 ==== ProdNG has been running in production for a while and things have changed a bit from the original vision.
 Please find the update version with more than a year of operational verification in very demanding environments. ===
 
+We are going to be slowly releasing our current production tooling as we are able to remove any PayPal specific code / settings. 
+Once that process is complete, I will remove this section and update the docs.
+
 Production Server images based on the [ProdNG whitepaper](docs/ProdNG-WhitePaper.pdf).
 
 ## But why?
